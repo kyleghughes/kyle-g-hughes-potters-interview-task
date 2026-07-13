@@ -1,5 +1,3 @@
-import { Box, Container, Typography, Button } from "@mui/material";
-import Footer from "./components/footer";
 import BlogPromoSection from "./components/BlogPromoSection";
 import FamilyBreaksSection from "./components/FamilyBreakSection";
 import headerImage from "./assets/images/resorts-homepage-header-2025.jpg";
@@ -7,6 +5,10 @@ import HeaderImage from "./components/HeaderImage";
 import ResortCard from "./components/ResortCard";
 import HoptonImage from "./assets/images/hopton-homepage-header-2025.webp";
 import FiveLakesImage from "./assets/images/five-lakes-homepage-header-2025.webp";
+import Footer from "./components/Footer";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
 const App = () => {
   return (
@@ -17,160 +19,160 @@ const App = () => {
         flexDirection: "column",
       }}
     >
-      <HeaderImage alt={"Family Holiday"} img={headerImage} />
-
+      <HeaderImage alt={"Couple enjoying drink at the bar"} img={headerImage} />
       <Box
         sx={{
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "column",
           textAlign: "center",
-          px: { xs: 2.5, sm: 3, md: 4 },
-          pt: { xs: 3, md: 4 },
-          pb: { xs: 3, md: 2 },
+          mt: { xs: 2, md: 6 },
+          px: { xs: 2, md: 0 },
+          gap: { xs: 1, md: 2 },
         }}
       >
         <Typography
-          variant="h2"
           sx={{
-            color: "#153b73",
-            fontWeight: 500,
-            fontSize: {
-              xs: "1.95rem",
-              sm: "2.25rem",
-              md: "2.7rem",
-            },
-            lineHeight: 1.15,
-            mb: { xs: 1.1, md: 1.4 },
+            color: "#173573",
+            lineHeight: "42px",
+            fontSize: { xs: "35px", md: "41px" },
           }}
         >
           The UK’s Only All Inclusive Short Breaks
         </Typography>
-
         <Typography
-          variant="h3"
           sx={{
-            color: "#153b73",
-            fontWeight: 500,
-            fontSize: {
-              xs: "1.6rem",
-              sm: "1.85rem",
-              md: "2.2rem",
-            },
-            lineHeight: 1.2,
-            mb: { xs: 2, md: 3 },
+            color: "#173573",
+            lineHeight: "36px",
+            fontSize: { xs: "30px", md: "35px" },
           }}
         >
           Fully Inclusive Breaks At The UK’s Best Resorts
         </Typography>
-
-        <Box
+      </Box>
+      <Box
+        sx={{
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+          mt: { xs: 2, md: 4 },
+          px: { xs: 2, md: 50 },
+          gap: { xs: 1, md: 2 },
+        }}
+      >
+        <Typography
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: { xs: 1.25, md: 0.4 },
-            mb: { xs: 3, md: 2.5 },
+            color: "#242424",
+            lineHeight: "22px",
+            fontSize: "16px",
           }}
         >
-          <Typography
-            sx={{
-              maxWidth: 1200,
-              mx: "auto",
-              color: "#444",
-              fontSize: { xs: "0.95rem", md: "1rem" },
-              lineHeight: 1.6,
-            }}
-          >
-            Enjoy a Fully Inclusive escape at our Five Star Resorts in Norfolk
-            and Essex, with outstanding dining, West End-quality entertainment
-            and activities all included in one simple price. The perfect,
-            hassle-free break.
-          </Typography>
-
-          <Typography
-            sx={{
-              maxWidth: 900,
-              mx: "auto",
-              color: "#444",
-              fontSize: { xs: "0.95rem", md: "1rem" },
-              lineHeight: 1.6,
-            }}
-          >
-            Adult only for much of the year, with family breaks during selected
-            school holidays at our Norfolk Resort.
-          </Typography>
-
-          <Typography
-            sx={{
-              maxWidth: 900,
-              mx: "auto",
-              color: "#444",
-              fontSize: { xs: "0.95rem", md: "1rem" },
-              lineHeight: 1.6,
-            }}
-          >
-            Proudly ranked the <strong>Best UK Holiday Parks & Resorts</strong>{" "}
-            by Which? readers and a Tripadvisor Travellers’ Choice.
-          </Typography>
-        </Box>
-
+          Enjoy a Fully Inclusive escape at our Five Star Resorts in Norfolk and
+          Essex, with outstanding dining, West End-quality entertainment and
+          activities all included in one simple price. The perfect, hassle-free
+          break.
+        </Typography>
+        <Typography
+          sx={{
+            color: "#242424",
+            lineHeight: "22px",
+            fontSize: "16px",
+          }}
+        >
+          Adult only for much of the year, with family breaks during selected
+          school holidays at our Norfolk Resort.
+        </Typography>
+        <Typography
+          sx={{
+            color: "#242424",
+            lineHeight: "22px",
+            fontSize: "16px",
+          }}
+        >
+          Proudly ranked the{" "}
+          <Box component="span" sx={{ fontWeight: 700 }}>
+            Best UK Holiday Parks & Resorts
+          </Box>{" "}
+          by Which? readers and a Tripadvisor Travellers’ Choice.
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "column",
+          mt: 2,
+          px: { xs: 2, md: 0 },
+          width: "100%",
+        }}
+      >
         <Button
           sx={{
-            width: { xs: "100%", sm: "auto" },
-            maxWidth: { xs: "320px", sm: "none" },
-            px: { xs: 3, sm: 6, md: 8 },
-            py: 1.2,
-            textTransform: "none",
-            fontSize: { xs: "0.95rem", md: "1rem" },
-            mb: { xs: 4, md: 5 },
+            width: { xs: "100%", md: "25%" },
+            mt: 2,
           }}
         >
           Save On Your Next Break
         </Button>
-
+      </Box>
+      <Box
+        sx={{
+          alignItems: "center",
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+          mt: { xs: 5, md: 6 },
+          px: { xs: 5, md: 0 },
+          width: "100%",
+        }}
+      >
         <Typography
-          variant="h2"
           sx={{
-            color: "#333",
-            fontWeight: 400,
-            fontSize: {
-              xs: "1.65rem",
-              md: "2.4rem",
-            },
-            mb: 3,
+            color: "#242424",
+            lineHeight: "42px",
+            fontSize: "36px",
           }}
         >
           Explore Our Two Five Star Resorts
         </Typography>
       </Box>
-
-      <Container sx={{ pb: { xs: 4, md: 10 } }}>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            gap: 3,
-          }}
-        >
-          <ResortCard
-            image={HoptonImage}
-            resortName="Potters Resorts Hopton-on-Sea"
-            tagline="Our Coastal Resort in Norfolk"
-            description="Set on the coast, Hopton-on-Sea combines sea views and vibrant entertainment, with more than a century at the forefront of UK short breaks."
-            buttonLink="https://www.pottersresorts.com/hopton-on-sea/"
-            cardColor="#2f6b98"
-          />
-
-          <ResortCard
-            image={FiveLakesImage}
-            resortName="Potters Resorts Five Lakes"
-            tagline="Our Countryside Resort in Essex"
-            description="Set within 333 acres of countryside, Five Lakes brings together open space, a wealth of activities and lively evenings in a contemporary Five Star setting."
-            buttonLink="https://www.pottersresorts.com/five-lakes/"
-            cardColor="#277379"
-          />
-        </Box>
-      </Container>
-
-      <FamilyBreaksSection />
+      <Box
+        sx={{
+          alignItems: "center",
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: "center",
+          width: "100%",
+          gap: { xs: 4, md: 5 },
+          mt: 3,
+          px: 2,
+        }}
+      >
+        <ResortCard
+          cardColor={"#25689D"}
+          image={HoptonImage}
+          resortName={"Potters Resorts Hopton-on-Sea"}
+          tagline={"Our Coastal Resort in Norfolk"}
+          description={
+            "Set on the coast, Hopton-on-Sea combines sea views and vibrant entertainment, with more than a century at the forefront of UK short breaks."
+          }
+          buttonLink={"https://www.pottersresorts.com/hopton-on-sea/"}
+        />
+        <ResortCard
+          cardColor={"#277379"}
+          image={FiveLakesImage}
+          resortName={"Potters Resorts Five Lakes"}
+          tagline={"Our Countryside Resort in Essex"}
+          description={
+            "Set within 333 acres of countryside, Five Lakes brings together open space, a wealth of activities and lively evenings in a contemporary Five Star setting."
+          }
+          buttonLink={"https://www.pottersresorts.com/five-lakes/"}
+        />
+      </Box>
+      <Box sx={{ mt: { xs: 2, md: 12 } }}>
+        <FamilyBreaksSection />
+      </Box>
       <BlogPromoSection />
       <Footer />
     </Box>

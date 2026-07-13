@@ -1,12 +1,11 @@
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Button,
-  Box,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
 
+// #region interface
 type ResortCardProps = {
   cardColor: string;
   image: string;
@@ -16,8 +15,9 @@ type ResortCardProps = {
   buttonLink: string;
   buttonLabel?: string;
 };
+// #endregion
 
-export default function ResortCard({
+const ResortCard = ({
   cardColor,
   image,
   resortName,
@@ -25,9 +25,11 @@ export default function ResortCard({
   description,
   buttonLink,
   buttonLabel,
-}: ResortCardProps) {
+}: ResortCardProps) => {
+  // #region variables
   const defaultButtonLabel = resortName.replace(/^Potters Resorts /, "");
   const btnLabel = buttonLabel || defaultButtonLabel;
+  // #endregion
 
   return (
     <Card
@@ -37,9 +39,9 @@ export default function ResortCard({
         display: "flex",
         flexDirection: "column",
         height: "100%",
-        width: "100%",
         maxWidth: { xs: "100%", md: 500 },
         overflow: "hidden",
+        width: "100%",
       }}
     >
       <CardMedia
@@ -54,46 +56,43 @@ export default function ResortCard({
 
       <CardContent
         sx={{
+          alignItems: "center",
           bgcolor: cardColor,
           color: "white",
-          flexGrow: 1,
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
+          flexGrow: 1,
           px: { xs: 2.2, md: 3.2 },
           py: { xs: 2, md: 2.8 },
+          textAlign: "center",
         }}
       >
         <Typography
-          variant="h4"
           sx={{
             fontWeight: 700,
-            mb: 0.35,
-            fontSize: { xs: "1.05rem", sm: "1.2rem", md: "1.45rem" },
-            lineHeight: 1.2,
+            fontSize: { xs: "22px", md: "25px" },
+            lineHeight: "26px",
+            mb: 1,
           }}
         >
           {resortName}
         </Typography>
 
         <Typography
-          variant="h4"
           sx={{
-            mb: { xs: 1, md: 1.4 },
-            fontWeight: 300,
-            fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1.05rem" },
+            fontSize: { xs: "22px", md: "25px" },
+            lineHeight: "26px",
+            mb: 4,
           }}
         >
           {tagline}
         </Typography>
 
         <Typography
-          variant="h6"
           sx={{
-            maxWidth: 440,
-            fontSize: { xs: "0.85rem", md: "0.9rem" },
-            lineHeight: 1.5,
+            fontSize: "16px",
+            lineHeight: "25px",
+            mb: 4,
           }}
         >
           {description}
@@ -101,7 +100,6 @@ export default function ResortCard({
 
         <Box
           sx={{
-            mt: "auto",
             width: "100%",
             display: "flex",
             justifyContent: "center",
@@ -109,20 +107,8 @@ export default function ResortCard({
         >
           <Button
             href={buttonLink}
-            variant="outlined"
             sx={{
-              mt: { xs: 1.6, md: 2 },
-              color: "white",
-              borderColor: "white",
-              fontSize: { xs: "0.9rem", md: "0.95rem" },
-              textTransform: "none",
-              width: { xs: "100%", sm: "62%" },
-              maxWidth: { xs: "320px", sm: "220px" },
-              borderRadius: "2px",
-              "&:hover": {
-                borderColor: "white",
-                bgcolor: "rgba(255,255,255,0.08)",
-              },
+              width: { xs: "100%", sm: "75%" },
             }}
           >
             Explore {btnLabel}
@@ -131,4 +117,6 @@ export default function ResortCard({
       </CardContent>
     </Card>
   );
-}
+};
+
+export default ResortCard;

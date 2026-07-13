@@ -1,22 +1,25 @@
 import { Box } from "@mui/material";
 
+// #region interface
 type HeaderImageProps = {
   alt: string;
   img: string;
 };
+// #endregion
 
 const HeaderImage = ({ alt, img }: HeaderImageProps) => {
   return (
     <Box
+      alt={alt}
       component="img"
       src={img}
-      alt={alt}
       sx={{
-        width: "100%",
-        height: { xs: 260, sm: 360, md: "auto" },
+        display: "block",
+        height: { xs: 200, sm: "auto" },
         objectFit: "cover",
         objectPosition: "center 35%",
-        display: "block",
+
+        width: "100%",
       }}
     />
   );

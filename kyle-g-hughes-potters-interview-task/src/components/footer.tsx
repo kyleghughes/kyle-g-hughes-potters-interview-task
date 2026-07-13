@@ -1,82 +1,87 @@
-import Container from "@mui/material/Container";
 import logo from "../assets/images/Potters-Resorts-Logo-White.png";
 import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import CentredContent from "./layout/CentredContent";
 
 const Footer = () => {
   return (
-    <Box
-      component="footer"
-      sx={{
-        bgcolor: "#152f64",
-        color: "white",
-        pt: {
-          xs: 4,
-          md: 6,
-        },
-        pb: 8,
-      }}
-    >
-      <Container maxWidth="md">
-        <Stack
-          sx={{
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          <Box
-            alt="Potters Resorts"
-            component="img"
-            src={logo}
-            sx={{
-              width: {
-                xs: "65%",
-                md: "35%",
-              },
-              height: "auto",
-            }}
-          />
-        </Stack>
+    <Box component="footer">
+      <CentredContent
+        content={
+          <>
+            <Box
+              alt="Potters Resorts logo"
+              component="img"
+              src={logo}
+              sx={{
+                height: "auto",
+                width: {
+                  xs: "65%",
+                  md: "13.5%",
+                },
+              }}
+            />
 
-        <Stack
-          direction="row"
-          spacing={1}
-          divider={<Typography color="rgba(255,255,255,.6)">|</Typography>}
-          sx={{
-            mt: 2,
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          <Typography variant="body2">Potters Resorts Hopton-on-Sea</Typography>
+            <Box sx={{ mt: 3 }}>
+              <Typography
+                sx={{
+                  color: "white",
+                  fontSize: { xs: "12px", md: "14px" },
+                  lineHeight: "19px",
+                }}
+              >
+                Potters Resorts Hopton-on-Sea&nbsp; | &nbsp;Potters Resorts Five
+                Lakes
+              </Typography>
+            </Box>
 
-          <Typography variant="body2">Potters Resorts Five Lakes</Typography>
-        </Stack>
+            <CentredContent
+              content={
+                <>
+                  <Typography
+                    sx={{
+                      color: "white",
+                      fontSize: { xs: "12px", md: "14px" },
+                      lineHeight: "19px",
+                    }}
+                  >
+                    © 2026 Potters Resorts | 0333 3207 500
+                  </Typography>
 
-        <Stack
-          spacing={0.5}
-          sx={{
-            mt: 3,
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          <Typography variant="body2">
-            © 2026 Potters Resorts | 0333 3207 500
-          </Typography>
-
-          <Typography variant="body2">
-            Potters Resorts Hopton-on-Sea, Coast Road, Hopton-on-Sea, NR31 9BX
-          </Typography>
-
-          <Typography variant="body2">
-            Potters Resorts Five Lakes, Colchester Road, Essex, CM9 8HX
-          </Typography>
-        </Stack>
-      </Container>
+                  <Typography
+                    sx={{
+                      color: "white",
+                      fontSize: { xs: "12px", md: "14px" },
+                      lineHeight: "19px",
+                    }}
+                  >
+                    Potters Resorts Hopton-on-Sea, Coast Road, Hopton-on-Sea,
+                    NR31 9BX
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: "white",
+                      fontSize: { xs: "12px", md: "14px" },
+                      lineHeight: "19px",
+                    }}
+                  >
+                    Potters Resorts Five Lakes, Colchester Road, Essex, CM9 8HX
+                  </Typography>
+                </>
+              }
+              sx={{ mt: 3, gap: 1 }}
+            />
+          </>
+        }
+        sx={{
+          bgcolor: "#173573",
+          color: "white",
+          px: 2,
+          py: 5,
+        }}
+      />
     </Box>
   );
 };
+
 export default Footer;
