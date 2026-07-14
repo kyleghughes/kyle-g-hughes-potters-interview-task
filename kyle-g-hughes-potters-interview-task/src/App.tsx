@@ -9,8 +9,13 @@ import Footer from "./components/Footer";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { useState } from "react";
+import SaveOnNextBreakModal from "./components/SaveOnNextBreakModal";
 
 const App = () => {
+  const [saveOnBreakModalOpen, setSaveOnBreakModalOpen] =
+    useState<boolean>(false);
+
   return (
     <Box
       sx={{
@@ -112,6 +117,7 @@ const App = () => {
             width: { xs: "100%", md: "25%" },
             mt: 2,
           }}
+          onClick={() => setSaveOnBreakModalOpen(true)}
         >
           Save On Your Next Break
         </Button>
@@ -175,6 +181,10 @@ const App = () => {
       </Box>
       <BlogPromoSection />
       <Footer />
+      <SaveOnNextBreakModal
+        open={saveOnBreakModalOpen}
+        onClose={() => setSaveOnBreakModalOpen(false)}
+      />
     </Box>
   );
 };

@@ -25,6 +25,18 @@ const theme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      defaultProps: {
+        size: "small",
+        fullWidth: true,
+      },
+      styleOverrides: {
+        root: {
+          backgroundColor: "#fff",
+          borderRadius: "4px",
+        },
+      },
+    },
   },
 });
 
