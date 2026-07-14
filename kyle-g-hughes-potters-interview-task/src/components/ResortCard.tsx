@@ -6,14 +6,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 
 // #region interface
-type ResortCardProps = {
+export type ResortCardProps = {
   cardColor: string;
   image: string;
   resortName: string;
   tagline: string;
   description: string;
   buttonLink: string;
-  buttonLabel?: string;
 };
 // #endregion
 
@@ -24,13 +23,7 @@ const ResortCard = ({
   tagline,
   description,
   buttonLink,
-  buttonLabel,
 }: ResortCardProps) => {
-  // #region variables
-  const defaultButtonLabel = resortName.replace(/^Potters Resorts /, "");
-  const btnLabel = buttonLabel || defaultButtonLabel;
-  // #endregion
-
   return (
     <Card
       elevation={0}
@@ -111,7 +104,7 @@ const ResortCard = ({
               width: { xs: "100%", sm: "75%" },
             }}
           >
-            Explore {btnLabel}
+            Explore {resortName}
           </Button>
         </Box>
       </CardContent>

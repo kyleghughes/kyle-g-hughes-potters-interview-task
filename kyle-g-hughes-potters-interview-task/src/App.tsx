@@ -2,7 +2,7 @@ import BlogPromoSection from "./components/BlogPromoSection";
 import FamilyBreaksSection from "./components/FamilyBreakSection";
 import headerImage from "./assets/images/resorts-homepage-header-2025.jpg";
 import HeaderImage from "./components/HeaderImage";
-import ResortCard from "./components/ResortCard";
+import ResortCard, { type ResortCardProps } from "./components/ResortCard";
 import HoptonImage from "./assets/images/hopton-homepage-header-2025.webp";
 import FiveLakesImage from "./assets/images/five-lakes-homepage-header-2025.webp";
 import Footer from "./components/Footer";
@@ -13,8 +13,33 @@ import { useState } from "react";
 import SaveOnNextBreakModal from "./components/SaveOnNextBreakModal";
 
 const App = () => {
+  // #region state
   const [saveOnBreakModalOpen, setSaveOnBreakModalOpen] =
     useState<boolean>(false);
+  // #endregion
+
+  // #region constants
+  const resortCards: ResortCardProps[] = [
+    {
+      cardColor: "#25689D",
+      image: HoptonImage,
+      resortName: "Hopton-on-Sea",
+      tagline: "Our Coastal Resort in Norfolk",
+      description:
+        "Set on the coast, Hopton-on-Sea combines sea views and vibrant entertainment, with more than a century at the forefront of UK short breaks.",
+      buttonLink: "https://www.pottersresorts.com/hopton-on-sea/",
+    },
+    {
+      cardColor: "#277379",
+      image: FiveLakesImage,
+      resortName: "Five Lakes",
+      tagline: "Our Countryside Resort in Essex",
+      description:
+        "Set within 333 acres of countryside, Five Lakes brings together open space, a wealth of activities and lively evenings in a contemporary Five Star setting.",
+      buttonLink: "https://www.pottersresorts.com/five-lakes/",
+    },
+  ];
+  // #endregion
 
   return (
     <Box
@@ -151,30 +176,13 @@ const App = () => {
           justifyContent: "center",
           width: "100%",
           gap: { xs: 4, md: 5 },
-          mt: 3,
+          mt: 4,
           px: 2,
         }}
       >
-        <ResortCard
-          cardColor={"#25689D"}
-          image={HoptonImage}
-          resortName={"Potters Resorts Hopton-on-Sea"}
-          tagline={"Our Coastal Resort in Norfolk"}
-          description={
-            "Set on the coast, Hopton-on-Sea combines sea views and vibrant entertainment, with more than a century at the forefront of UK short breaks."
-          }
-          buttonLink={"https://www.pottersresorts.com/hopton-on-sea/"}
-        />
-        <ResortCard
-          cardColor={"#277379"}
-          image={FiveLakesImage}
-          resortName={"Potters Resorts Five Lakes"}
-          tagline={"Our Countryside Resort in Essex"}
-          description={
-            "Set within 333 acres of countryside, Five Lakes brings together open space, a wealth of activities and lively evenings in a contemporary Five Star setting."
-          }
-          buttonLink={"https://www.pottersresorts.com/five-lakes/"}
-        />
+        {resortCards.map((resort) => (
+          <ResortCard key={resort.resortName} {...resort} />
+        ))}
       </Box>
       <Box sx={{ mt: { xs: 2, md: 12 } }}>
         <FamilyBreaksSection />
