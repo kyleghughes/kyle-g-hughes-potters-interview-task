@@ -6,6 +6,9 @@ const FamilyBreaksSection = () => {
   return (
     <>
       <CentredContent
+        props={{
+          "data-testid": "family-breaks-section",
+        }}
         content={
           <>
             <Box

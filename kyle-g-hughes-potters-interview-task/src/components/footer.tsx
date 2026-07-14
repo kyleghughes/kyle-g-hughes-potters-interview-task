@@ -7,6 +7,9 @@ const Footer = () => {
   return (
     <Box component="footer">
       <CentredContent
+        props={{
+          "data-testid": "footer-content",
+        }}
         content={
           <>
             <Box

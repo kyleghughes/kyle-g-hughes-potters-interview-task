@@ -202,7 +202,7 @@ const SaveOnNextBreakModal = ({ open, onClose }: SaveOnNextBreakModalProps) => {
               helperText={errors.mobile?.message}
             />
 
-            <Button type="submit" variant="contained" disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting}>
               {isSubmitting ? "Submitting..." : "Submit"}
             </Button>
           </Box>
